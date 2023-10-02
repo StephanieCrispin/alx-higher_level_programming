@@ -1,2 +1,5 @@
 #!/bin/bash
-python3 $PYCODE
+
+script_name="$PYCODE"
+
+python3 "$script_name"
