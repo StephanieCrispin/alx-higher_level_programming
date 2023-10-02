@@ -1,5 +1,2 @@
 #!/bin/bash
-
-script_name="$PYCODE"
-
-python3 "$script_name"
+python3 "$PYCODE"
