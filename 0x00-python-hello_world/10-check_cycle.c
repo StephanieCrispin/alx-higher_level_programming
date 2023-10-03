@@ -2,12 +2,14 @@
 
 int check_cycle(listint_t *list)
 {
+    listint_t *slowPtr;
+    listint_t *fastPtr;
 
     if (list == NULL)
         return (0);
 
-    listint_t *slowPtr = list;
-    listint_t *fastPtr = list;
+    slowPtr = list;
+    fastPtr = list;
 
     if (slowPtr == fastPtr)
         return (1);
