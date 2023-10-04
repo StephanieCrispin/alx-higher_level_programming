@@ -6,5 +6,8 @@ for i in range(0,100):
        i = ("{:d}, ".format(i))
     elif i == 99:
        i = ("{:d}\n").format(i)
-    print(i, end=" ")
-    
+
+    if i != 99:
+        print(i, end=" ")
+    elif i == 99:
+        print(i)
