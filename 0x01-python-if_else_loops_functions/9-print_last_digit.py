@@ -12,9 +12,3 @@ def print_last_digit(number):
     elif last_digit < 6 and not 0:
         print("{:d}".format(last_digit), end="")
     return last_digit
-
-
-print_last_digit(98)
-print_last_digit(0)
-r = print_last_digit(-1024)
-print(r)
