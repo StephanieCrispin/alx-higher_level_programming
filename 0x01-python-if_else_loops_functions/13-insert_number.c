@@ -13,8 +13,9 @@ listint_t *createNewNode(listint_t *newNode, int number)
 
 listint_t *insert_node(listint_t **head, int number)
 {
-    listint_t *newNode;
-    listint_t *currentNode;
+    listint_t *newNode = NULL;
+    listint_t *currentNode = NULL;
+
     listint_t *MynewNode = createNewNode(newNode, number);
     /*If node is the smalles number set it to the first node*/
     if (*head == NULL || (number < (*head)->n))
