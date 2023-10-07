@@ -19,5 +19,5 @@ if __name__ == "__main__":
         elif c == "*":
             print("{:d} {:s} {:d} = {:d}".format(a, c, b, mul(a, b)))
         else:
-            print("Unknown operator. Available operators: +, -, * and /&")
+            print("Unknown operator. Available operators: +, -, * and /")
             exit(1)
