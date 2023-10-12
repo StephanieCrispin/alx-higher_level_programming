@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
 def update_dictionary(a_dictionary, key, value):
-    new_dict = dict()
-    new_dict = a_dictionary
-    new_dict.update({key: value})
-    return (new_dict)
+    """Updates a python dict"""
+    a_dictionary[key] = value
+    return (a_dictionary)
