@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""A python function: That loads from json file"""
 import json
 
 
