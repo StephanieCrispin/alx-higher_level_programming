@@ -1,26 +1,33 @@
 #!/usr/bin/python3
-"""A class module"""
+# Stephanie Mfon
+"""Defines a base model class."""
 import json
-import turtle
 import csv
+import turtle
 
 
 class Base:
+    """Represent the base model.
+
+    Represents the "base" for all other classes in project 0x0C*.
+
+    Attributes:
+        __nb_objects (int): The number of instantiated Bases.
     """
 
-    A class to represent a base
-    ...
-    Attributes
-    ---------
-    """
-    __nb_object = 0
+    __nb_objects = 0
 
     def __init__(self, id=None):
+        """Initialize a new Base.
+
+        Args:
+            id (int): The identity of the new Base.
+        """
         if id is not None:
             self.id = id
         else:
-            Base.__nb_object += 1
-            self.id = Base.__nb_object
+            Base.__nb_objects += 1
+            self.id = Base.__nb_objects
 
     @staticmethod
     def to_json_string(list_dictionaries):
@@ -35,7 +42,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """Writes the JSON serialization of a list of objects to file.
+        """Write the JSON serialization of a list of objects to a file.
 
         Args:
             list_objs (list): A list of inherited Base instances.
@@ -50,12 +57,12 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns the deserialization of JSON string.
+        """Return the deserialization of a JSON string.
 
         Args:
-            json_string (str): A JSON str that consist of a list of dicts.
+            json_string (str): A JSON str representation of a list of dicts.
         Returns:
-            If json_string is None or empty - Return an empty list.
+            If json_string is None or empty - an empty list.
             Otherwise - the Python list represented by json_string.
         """
         if json_string is None or json_string == "[]":
@@ -67,7 +74,7 @@ class Base:
         """Return a class instantied from a dictionary of attributes.
 
         Args:
-            **dictionary (dict): These are Key/value pairs 
+            **dictionary (dict): Key/value pairs of attributes to initialize.
         """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
@@ -84,8 +91,8 @@ class Base:
         Reads from `<cls.__name__>.json`.
 
         Returns:
-            If the file does not exist - Return an empty list.
-            Otherwise - Return a list of instantiated classes.
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
         """
         filename = str(cls.__name__) + ".json"
         try:
@@ -100,7 +107,7 @@ class Base:
         """Write the CSV serialization of a list of objects to a file.
 
         Args:
-            list_objs (list): This is a list of inherited Base instances.
+            list_objs (list): A list of inherited Base instances.
         """
         filename = cls.__name__ + ".csv"
         with open(filename, "w", newline="") as csvfile:
@@ -122,8 +129,8 @@ class Base:
         Reads from `<cls.__name__>.csv`.
 
         Returns:
-            If the file does not exist - Return an empty list.
-            Otherwise - Return a list of instantiated classes.
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
         """
         filename = cls.__name__ + ".csv"
         try:
