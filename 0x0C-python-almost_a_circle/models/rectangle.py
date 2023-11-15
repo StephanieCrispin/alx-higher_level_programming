@@ -23,15 +23,11 @@ class Rectangle(Base):
             TypeError: If either of x or y is not an int.
             ValueError: If either of x or y < 0.
         """
-        super().__init__(id)
-        self.__width = width
-        self.__height = height
-        if x < 0:
-            raise ValueError("x must be >= 0")
+        self.width = width
+        self.height = height
         self.x = x
-        if y < 0:
-            raise ValueError("y must be >= 0")
         self.y = y
+        super().__init__(id)
 
     @property
     def width(self):
@@ -41,7 +37,7 @@ class Rectangle(Base):
     @width.setter
     def set_width(self, width):
         """Sets the width of a square"""
-        if not isinstance(width, int):
+        if type(width) != int:
             raise TypeError("width must be an integer")
         elif width < 0:
             raise ValueError("width must be >= 0")
@@ -55,11 +51,37 @@ class Rectangle(Base):
     @height.setter
     def set_height(self, height):
         """sets the new size of a hieght"""
-        if not isinstance(height, int):
+        if type(height) != int:
             raise TypeError("height must be an integer")
         elif height < 0:
             raise ValueError("height must be >= 0")
         self.__height = height
+
+    @property
+    def x(self):
+        """Set/get the x coordinate of the Rectangle."""
+        return self.__x
+
+    @x.setter
+    def x(self, x_value):
+        if type(x_value) != int:
+            raise TypeError("x must be an integer")
+        if x_value < 0:
+            raise ValueError("x must be >= 0")
+        self.__x = x_value
+
+    @property
+    def y(self):
+        """Set/get the y coordinate of the Rectangle."""
+        return self.__y
+
+    @y.setter
+    def y(self, value):
+        if type(value) != int:
+            raise TypeError("y must be an integer")
+        if value < 0:
+            raise ValueError("y must be >= 0")
+        self.__y = value
 
     def area(self):
         """area of a rectangle"""

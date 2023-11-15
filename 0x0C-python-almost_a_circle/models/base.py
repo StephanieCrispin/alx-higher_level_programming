@@ -67,7 +67,8 @@ class Base:
         """Return a class instantied from a dictionary of attributes.
 
         Args:
-            **dictionary (dict): These are Key/value pairs of attributes to initialize.
+            **dictionary (dict): These are Key/value pairs of 
+            attributes to initialize.
         """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
