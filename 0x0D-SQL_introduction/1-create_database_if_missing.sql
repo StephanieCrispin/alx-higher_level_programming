@@ -1,0 +1,2 @@
+-- A script that creates a database if it doesnt exist
+CREATE DATABASE [IF NOT EXIST] hbtn_0c_0
