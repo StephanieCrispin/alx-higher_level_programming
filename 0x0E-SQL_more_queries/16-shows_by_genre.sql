@@ -5,6 +5,6 @@ SELECT s.`title`,w.`name`
     LEFT JOIN `tv_show_genres` AS g
     ON s.`id` = g.`show_id`
 
-    LEFT JOIN `tv_genres` as w
+    LEFT JOIN `tv_genres` AS w
     ON g.`genre_id`=w.`id`
 ORDER BY s.`title`, w.`name`;
