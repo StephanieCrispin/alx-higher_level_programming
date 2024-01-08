@@ -1,6 +1,4 @@
 #!/usr/bin/node
 // A script that prints three strings
 
-console.log("C is fun");
-console.log("Python is cool");
-console.log("Javascript is amazing");
+console.log("C is fun\nPython is cool\nJavascript is amazing");
